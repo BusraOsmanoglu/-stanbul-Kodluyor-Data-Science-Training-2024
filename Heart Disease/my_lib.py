@@ -50,7 +50,7 @@ def grab_col_names(df, cat_threshold=10, car_threshold=20):
 
     cat_but_car = [col for col in df.columns if df[col].nunique() > car_threshold and df[col].dtypes == "O"]
 
-    numeric_id = [col for col in df.columns if df[col].nunique() == df.shape[0] and df[col].dtype in ['int', 'int64']]
+    numeric_id = [col for col in df.columns if df[col].nunique() == df.shape[0] and df[col].dtype in ['int', 'int64', 'object']]
 
     cat_cols = sorted(list(set(cat_cols + num_but_cat) - set(cat_but_car)))
 
